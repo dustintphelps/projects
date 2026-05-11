@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@page {
+  size: letter;
+  margin: 0.65in 0.7in 0.75in 0.7in;
+  @top-center {
+    content: "ASTRA ARVIS  ·  Value Analysis Committee Submission  ·  Q2 2026";
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #7a8a99;
+    letter-spacing: 0.5pt;
+    padding-top: 6pt;
+  }
+  @bottom-center {
+    content: counter(page) " of " counter(pages);
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 7.5pt;
+    color: #7a8a99;
+    padding-bottom: 4pt;
+  }
+  @bottom-left {
+    content: "CONFIDENTIAL — INTERNAL USE ONLY";
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 7pt;
+    color: #aabbc8;
+    padding-bottom: 4pt;
+  }
+  @bottom-right {
+    content: "Astra · Arvis Navigation System";
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 7pt;
+    color: #aabbc8;
+    padding-bottom: 4pt;
+  }
+}
+@page :first {
+  @top-center { content: ""; }
+  @bottom-center { content: ""; }
+  @bottom-left { content: ""; }
+  @bottom-right { content: ""; }
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 9.5pt;
+  color: #1a2533;
+  line-height: 1.5;
+  background: #fff;
+}
+
+/* ── COVER PAGE ── */
+.cover-page {
+  page-break-after: always;
+  height: 9.5in;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: #fff;
+}
+.cover-stripe-top {
+  height: 8pt;
+  background: linear-gradient(90deg, #1a6fa8, #00b4d8);
+  margin-bottom: 0;
+}
+.cover-navy-band {
+  background: #0d1b2a;
+  padding: 36pt 48pt 32pt;
+}
+.cover-product-eyebrow {
+  font-size: 8pt;
+  letter-spacing: 3pt;
+  text-transform: uppercase;
+  color: #00b4d8;
+  font-weight: 700;
+  margin-bottom: 10pt;
+}
+.cover-product-name {
+  font-size: 32pt;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.05;
+  letter-spacing: -0.5pt;
+  margin-bottom: 6pt;
+}
+.cover-product-sub {
+  font-size: 13pt;
+  color: #8fa3b1;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+.cover-body {
+  flex: 1;
+  padding: 32pt 48pt;
+  display: flex;
+  flex-direction: column;
+}
+.cover-doc-type {
+  font-size: 10pt;
+  font-weight: 700;
+  letter-spacing: 1pt;
+  text-transform: uppercase;
+  color: #1a6fa8;
+  border-left: 3pt solid #1a6fa8;
+  padding-left: 10pt;
+  margin-bottom: 24pt;
+}
+.cover-purpose {
+  font-size: 10pt;
+  color: #3a4d60;
+  line-height: 1.7;
+  max-width: 440pt;
+  margin-bottom: 28pt;
+}
+.cover-snapshot {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28pt;
+  border: 1pt solid #dde3ea;
+  border-radius: 4pt;
+  overflow: hidden;
+}
+.snap-item {
+  flex: 1;
+  padding: 14pt 12pt;
+  border-right: 1pt solid #dde3ea;
+  text-align: center;
+}
+.snap-item:last-child { border-right: none; }
+.snap-num {
+  font-size: 18pt;
+  font-weight: 800;
+  color: #1a6fa8;
+  line-height: 1;
+  margin-bottom: 4pt;
+}
+.snap-lbl {
+  font-size: 7pt;
+  color: #6b7a8d;
+  text-transform: uppercase;
+  letter-spacing: 0.3pt;
+  line-height: 1.3;
+}
+.cover-meta {
+  margin-top: auto;
+  padding-top: 20pt;
+  border-top: 1pt solid #dde3ea;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.cover-meta-left dt {
+  font-size: 7pt;
+  text-transform: uppercase;
+  letter-spacing: 1pt;
+  color: #8fa3b1;
+  margin-bottom: 2pt;
+}
+.cover-meta-left dd {
+  font-size: 9pt;
+  color: #1a2533;
+  font-weight: 600;
+  margin-bottom: 8pt;
+}
+.cover-meta-right {
+  font-size: 7.5pt;
+  color: #aabbc8;
+  text-align: right;
+  line-height: 1.6;
+}
+.cover-disclaimer-bar {
+  background: #f5f7fa;
+  padding: 10pt 48pt;
+  font-size: 7pt;
+  color: #8fa3b1;
+  line-height: 1.5;
+  border-top: 1pt solid #dde3ea;
+}
+
+/* ── CONTENT PAGES ── */
+.section {
+  page-break-inside: avoid;
+  margin-bottom: 20pt;
+}
+.section-break { page-break-before: always; }
+
+.sec-header {
+  display: flex;
+  align-items: center;
+  gap: 8pt;
+  margin-bottom: 12pt;
+  padding-bottom: 6pt;
+  border-bottom: 1.5pt solid #1a6fa8;
+}
+.sec-num {
+  background: #1a6fa8;
+  color: #fff;
+  font-size: 8pt;
+  font-weight: 800;
+  width: 18pt;
+  height: 18pt;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  text-align: center;
+  line-height: 18pt;
+  padding: 0;
+}
+.sec-title {
+  font-size: 13pt;
+  font-weight: 800;
+  color: #0d1b2a;
+  letter-spacing: -0.2pt;
+}
+.sec-badge {
+  margin-left: auto;
+  font-size: 7pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5pt;
+  color: #1a6fa8;
+  background: #dbeafe;
+  padding: 2pt 7pt;
+  border-radius: 10pt;
+}
+
+/* ── STAT ROW ── */
+.stat-row {
+  display: flex;
+  gap: 0;
+  border: 1pt solid #dde3ea;
+  border-radius: 4pt;
+  overflow: hidden;
+  margin-bottom: 14pt;
+}
+.stat-cell {
+  flex: 1;
+  padding: 12pt 10pt;
+  border-right: 1pt solid #dde3ea;
+  text-align: center;
+}
+.stat-cell:last-child { border-right: none; }
+.stat-n {
+  font-size: 16pt;
+  font-weight: 800;
+  color: #1a6fa8;
+  line-height: 1;
+  margin-bottom: 4pt;
+}
+.stat-n.gold  { color: #b45309; }
+.stat-n.green { color: #15803d; }
+.stat-n.red   { color: #be123c; }
+.stat-l {
+  font-size: 7pt;
+  color: #6b7a8d;
+  text-transform: uppercase;
+  letter-spacing: 0.3pt;
+  line-height: 1.3;
+}
+
+/* ── TABLES ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8.5pt;
+  margin-bottom: 12pt;
+}
+thead tr {
+  background: #0d1b2a;
+  color: #fff;
+}
+th {
+  padding: 7pt 9pt;
+  text-align: left;
+  font-weight: 700;
+  font-size: 7.5pt;
+  text-transform: uppercase;
+  letter-spacing: 0.5pt;
+}
+td {
+  padding: 6pt 9pt;
+  border-bottom: 0.5pt solid #dde3ea;
+  color: #1a2533;
+  vertical-align: top;
+}
+tr:last-child td { border-bottom: none; }
+tr:nth-child(even) td { background: #f8fafc; }
+.hl-row td { background: #eff6ff !important; font-weight: 700; }
+.hl-row td:first-child { border-left: 3pt solid #1a6fa8; }
+.r { text-align: right; }
+.pos { color: #15803d; font-weight: 700; }
+.neg { color: #be123c; font-weight: 700; }
+.gld { color: #b45309; font-weight: 700; }
+.acc { color: #1a6fa8; font-weight: 700; }
+
+/* ── TWO-COL LAYOUT ── */
+.two-col {
+  display: flex;
+  gap: 14pt;
+  margin-bottom: 12pt;
+}
+.col { flex: 1; }
+.col-wide { flex: 1.6; }
+
+/* ── CARDS ── */
+.card {
+  border: 1pt solid #dde3ea;
+  border-radius: 4pt;
+  padding: 12pt;
+  margin-bottom: 10pt;
+  background: #fff;
+}
+.card.blue   { border-left: 3pt solid #1a6fa8; }
+.card.gold   { border-left: 3pt solid #b45309; }
+.card.green  { border-left: 3pt solid #15803d; }
+.card.red    { border-left: 3pt solid #be123c; }
+.card.navy   { background: #0d1b2a; color: #fff; }
+.card h4 {
+  font-size: 8pt;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5pt;
+  color: #1a6fa8;
+  margin-bottom: 6pt;
+}
+.card.navy h4 { color: #00b4d8; }
+.card p, .card li {
+  font-size: 8.5pt;
+  color: #2d3e50;
+  line-height: 1.55;
+}
+.card.navy p, .card.navy li { color: #c8d8e4; }
+
+/* ── BULLET LISTS ── */
+ul.bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul.bullets li {
+  font-size: 8.5pt;
+  padding-left: 12pt;
+  position: relative;
+  margin-bottom: 4pt;
+  line-height: 1.5;
+  color: #2d3e50;
+}
+ul.bullets li::before {
+  content: '›';
+  position: absolute;
+  left: 0;
+  color: #1a6fa8;
+  font-weight: 700;
+  font-size: 10pt;
+  line-height: 1.3;
+}
+ul.bullets li strong { color: #0d1b2a; }
+
+/* ── CALLOUT ── */
+.callout {
+  background: #eff6ff;
+  border: 1pt solid #bfdbfe;
+  border-radius: 4pt;
+  padding: 10pt 12pt;
+  font-size: 8.5pt;
+  line-height: 1.55;
+  margin-bottom: 10pt;
+  color: #1e3a5f;
+}
+.callout strong { color: #1a6fa8; }
+.callout.gold { background: #fffbeb; border-color: #fde68a; color: #4a2c00; }
+.callout.gold strong { color: #b45309; }
+.callout.green { background: #f0fdf4; border-color: #bbf7d0; color: #064e3b; }
+.callout.green strong { color: #15803d; }
+.callout.red { background: #fff1f2; border-color: #fecdd3; color: #4c0519; }
+.callout.red strong { color: #be123c; }
+
+/* ── QUOTE BLOCK ── */
+.quote {
+  border-left: 3pt solid #1a6fa8;
+  padding: 8pt 12pt;
+  font-size: 8.5pt;
+  font-style: italic;
+  color: #3a4d60;
+  background: #f8fafc;
+  margin: 8pt 0;
+  line-height: 1.6;
+  border-radius: 0 4pt 4pt 0;
+}
+
+/* ── RECOMMENDATION BOX ── */
+.rec-box {
+  background: #0d1b2a;
+  border-radius: 5pt;
+  padding: 16pt 18pt;
+  margin-bottom: 14pt;
+  color: #fff;
+}
+.rec-box .rec-label {
+  font-size: 8pt;
+  letter-spacing: 2pt;
+  text-transform: uppercase;
+  color: #00b4d8;
+  font-weight: 700;
+  margin-bottom: 8pt;
+}
+.rec-box .rec-text {
+  font-size: 10pt;
+  font-weight: 600;
+  line-height: 1.6;
+  color: #e8f0f6;
+}
+
+/* ── MISC ── */
+.eyebrow {
+  font-size: 7.5pt;
+  letter-spacing: 2pt;
+  text-transform: uppercase;
+  color: #1a6fa8;
+  font-weight: 700;
+  margin-bottom: 4pt;
+}
+p { margin-bottom: 8pt; font-size: 9pt; color: #2d3e50; line-height: 1.6; }
+.small { font-size: 7.5pt; color: #7a8a99; line-height: 1.4; }
+.mb-0 { margin-bottom: 0; }
+.mb-6 { margin-bottom: 6pt; }
+.mb-10 { margin-bottom: 10pt; }
+.mt-10 { margin-top: 10pt; }
+.keep-together { page-break-inside: avoid; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     COVER PAGE
+══════════════════════════════ -->
+<div class="cover-page">
+  <div class="cover-stripe-top"></div>
+  <div class="cover-navy-band">
+    <div class="cover-product-eyebrow">Value Analysis Committee — Capital Equipment Submission</div>
+    <div class="cover-product-name">Astra Arvis<br>Navigation System</div>
+    <div class="cover-product-sub">Orthopedic Imaging &amp; Computer-Assisted Navigation · $100K–$500K Range</div>
+  </div>
+  <div class="cover-body">
+    <div class="cover-doc-type">Executive Leave-Behind · Financial &amp; Clinical Supplement</div>
+    <p class="cover-purpose">
+      This document is prepared as a supplemental resource to accompany the formal Value Analysis Committee
+      capital equipment request for the Astra Arvis Orthopedic Navigation System. It provides peer-reviewed
+      clinical evidence, facility-specific financial modeling frameworks, 2026 reimbursement context, and
+      the regulatory background necessary for an informed committee review.
+    </p>
+    <div class="cover-snapshot">
+      <div class="snap-item">
+        <div class="snap-num">$126K</div>
+        <div class="snap-lbl">Real after-tax cost<br>$200K system (37% bracket)</div>
+      </div>
+      <div class="snap-item">
+        <div class="snap-num" style="color:#b45309;">$4,721</div>
+        <div class="snap-lbl">HOPD vs. ASC spread<br>per TKA (CMS 2026)</div>
+      </div>
+      <div class="snap-item">
+        <div class="snap-num" style="color:#15803d;">9.0%</div>
+        <div class="snap-lbl">Malalignment rate w/<br>navigation (vs. 31.8%)</div>
+      </div>
+      <div class="snap-item">
+        <div class="snap-num">~7 mo</div>
+        <div class="snap-lbl">Equipment payback<br>50 incremental cases/yr</div>
+      </div>
+      <div class="snap-item">
+        <div class="snap-num" style="color:#b45309;">20.4%</div>
+        <div class="snap-lbl">TKAs using robotic<br>assistance (AJRR 2023)</div>
+      </div>
+    </div>
+    <div class="cover-meta">
+      <dl class="cover-meta-left">
+        <dt>Document Type</dt>
+        <dd>VAC Capital Equipment Supplement</dd>
+        <dt>Prepared</dt>
+        <dd>Q2 2026</dd>
+        <dt>Product Category</dt>
+        <dd>Orthopedic Navigation &amp; Imaging System</dd>
+        <dt>Applicable Facility Types</dt>
+        <dd>For-Profit Hospital · Non-Profit Hospital · Surgeon-Owned ASC</dd>
+      </dl>
+      <div class="cover-meta-right">
+        ASTRA · ARVIS<br>
+        Internal Use Only<br>
+        Not for Patient Distribution
+      </div>
+    </div>
+  </div>
+  <div class="cover-disclaimer-bar">
+    All financial figures are based on publicly available 2026 data including CMS payment rules, IRS publications, and published industry research. This document does not constitute financial, tax, legal, or regulatory advice.
+    All recipients should consult their CPA, healthcare attorney, and financial advisor before making any capital investment decision. Reimbursement rates are estimates and will vary by facility. © 2026 Astra · All rights reserved.
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     PAGE 2: EXECUTIVE SUMMARY
+══════════════════════════════ -->
+<div class="section section-break keep-together">
+  <div class="sec-header">
+    <div class="sec-num">1</div>
+    <div class="sec-title">Executive Summary &amp; VAC Recommendation</div>
+    <div class="sec-badge">Key Drivers</div>
+  </div>
+
+  <div class="rec-box">
+    <div class="rec-label">Recommended Action for VAC Approval</div>
+    <div class="rec-text">
+      Approve capital purchase of the Astra Arvis Orthopedic Navigation System. The 2026 investment
+      environment is uniquely favorable: permanent 100% bonus depreciation under the One Big Beautiful
+      Bill Act reduces real net cost to 63 cents on the dollar for for-profit and surgeon-owned facilities,
+      while the CMS CY 2026 Final Rule removes 285 musculoskeletal procedures from the Inpatient-Only list
+      and adds 560 new ASC-billable procedures — creating a volume retention and revenue capture imperative
+      that extends to non-profit systems regardless of tax position.
+    </div>
+  </div>
+
+  <div class="stat-row">
+    <div class="stat-cell">
+      <div class="stat-n">$126K</div>
+      <div class="stat-l">Net after-tax cost<br>$200K system, 37%</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">$63K</div>
+      <div class="stat-l">Year 1 tax savings<br>$300K at 21% corp.</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n gold">$4,721</div>
+      <div class="stat-l">HOPD vs. ASC<br>per-TKA spread</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n green">~7 mo</div>
+      <div class="stat-l">Payback period<br>50 cases/year</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n">9.0%</div>
+      <div class="stat-l">Malalignment rate<br>navigation (vs. 31.8%)</div>
+    </div>
+    <div class="stat-cell">
+      <div class="stat-n red">Jun 30</div>
+      <div class="stat-l">179D construction<br>start deadline</div>
+    </div>
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="card blue">
+        <h4>Force 1: Federal Tax Law (OBBBA)</h4>
+        <ul class="bullets">
+          <li><strong>100% bonus depreciation permanent</strong> — One Big Beautiful Bill Act, PL 119-21, signed July 4, 2025</li>
+          <li>No phase-down, no sunset, no dollar cap</li>
+          <li>2026 would have been a 20% bonus year under old law — OBBBA restored <strong>$50,400 in Year 1 value</strong> on a $300K purchase</li>
+          <li>Pass-through K-1 to surgeon-owners' personal returns in year of purchase</li>
+          <li>Finance as a loan (not lease) to preserve ownership and depreciation eligibility</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card gold">
+        <h4>Force 2: CMS CY 2026 Coverage Expansion</h4>
+        <ul class="bullets">
+          <li><strong>285 MSK procedures removed from Inpatient-Only list</strong></li>
+          <li><strong>560 new ASC-eligible procedures</strong> — largest single-year CPL expansion in history</li>
+          <li>New Level 7 Musculoskeletal APC for revision joints and complex fusions</li>
+          <li>Revision THA and TKA: newly billable in ambulatory settings for the first time</li>
+          <li>Navigation is a clinical prerequisite for performing these cases in an ASC setting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>VAC Decision Framework:</strong> This is not a "nice to have" technology purchase. It is a capital investment with a documented 7-month payback, permanent tax advantage, and access to a newly-created procedure revenue category. Facilities that defer this decision defer the revenue; the tax benefit is permanent and does not expire.
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     PAGE 3: FINANCIAL ANALYSIS
+══════════════════════════════ -->
+<div class="section section-break">
+  <div class="sec-header">
+    <div class="sec-num">2</div>
+    <div class="sec-title">Financial Analysis by Facility Type</div>
+    <div class="sec-badge">ROI &amp; Tax Impact</div>
+  </div>
+
+  <div class="eyebrow" style="margin-bottom:6pt;">For-Profit Hospitals — Corporate Tax Position</div>
+  <div class="two-col">
+    <div class="col-wide">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th>Year 1 Deduction</th><th>Year 1 Tax Savings</th><th>vs. Old Law</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Old law (20% bonus — 2026 without OBBBA)</td><td class="r">$60,000</td><td class="r neg">$12,600</td><td class="r">—</td></tr>
+          <tr class="hl-row"><td><strong>OBBBA — 100% Bonus Depreciation (permanent)</strong></td><td class="r"><strong>$300,000</strong></td><td class="r pos"><strong>$63,000</strong></td><td class="r pos"><strong>+$50,400</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <div class="callout" style="margin-bottom:0;">
+        <strong>Bond covenant note:</strong> GAAP and IRS depreciation run on separate books. Accelerating the tax deduction does <em>not</em> reduce GAAP EBITDA reported to bond rating agencies. No covenant exposure.
+      </div>
+    </div>
+  </div>
+
+  <div class="eyebrow" style="margin-bottom:6pt;margin-top:10pt;">Surgeon-Owned ASC — Pass-Through Tax Sensitivity ($200K System)</div>
+  <table>
+    <thead>
+      <tr><th>Ownership %</th><th>K-1 Deduction</th><th>Tax Savings (37%)</th><th>Net After-Tax Cost</th><th>Effective Cost</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>10%</td><td class="r">$20,000</td><td class="r pos">$7,400</td><td class="r acc">$12,600</td><td class="r">63¢</td></tr>
+      <tr><td>20%</td><td class="r">$40,000</td><td class="r pos">$14,800</td><td class="r acc">$25,200</td><td class="r">63¢</td></tr>
+      <tr class="hl-row"><td><strong>25%</strong></td><td class="r"><strong>$50,000</strong></td><td class="r pos"><strong>$18,500</strong></td><td class="r acc"><strong>$31,500</strong></td><td class="r"><strong>63¢</strong></td></tr>
+      <tr><td>50%</td><td class="r">$100,000</td><td class="r pos">$37,000</td><td class="r acc">$63,000</td><td class="r">63¢</td></tr>
+      <tr><td>100%</td><td class="r">$200,000</td><td class="r pos">$74,000</td><td class="r acc">$126,000</td><td class="r">63¢</td></tr>
+    </tbody>
+  </table>
+  <p class="small" style="margin-bottom:10pt;">At 37% bracket, every ownership stake pays 63¢ on the dollar. At 32%: 68¢. At 24%: 76¢. State tax savings are additive where state conforms to federal bonus depreciation. CA, NY, NJ do not conform.</p>
+
+  <div class="eyebrow" style="margin-bottom:6pt;">Incremental EBITDA &amp; Payback Model (Surgeon-Owned ASC)</div>
+  <div class="two-col">
+    <div class="col-wide">
+      <table>
+        <thead>
+          <tr><th>Scenario</th><th>Additional Cases/Year</th><th>Blended Net Revenue</th><th>Contribution Margin/Case</th><th>Incremental EBITDA</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Conservative</td><td class="r">25</td><td class="r">$8,500</td><td class="r">$3,000</td><td class="r">$75,000</td></tr>
+          <tr class="hl-row"><td><strong>Base Case</strong></td><td class="r"><strong>50</strong></td><td class="r"><strong>$10,000</strong></td><td class="r"><strong>$4,500</strong></td><td class="r pos"><strong>$225,000</strong></td></tr>
+          <tr><td>Optimistic</td><td class="r">80</td><td class="r">$12,000</td><td class="r">$6,500</td><td class="r">$520,000</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Fixed costs excluded — incremental cases flow largely to contribution margin. Base case payback: $126,000 ÷ $225,000 = <strong>~7 months</strong>.</p>
+    </div>
+    <div class="col">
+      <div class="card green">
+        <h4>Equity Value Created (Base Case, 25% Owner)</h4>
+        <ul class="bullets">
+          <li>$225K EBITDA × 9x multiple = <strong>$2.025M enterprise value added</strong></li>
+          <li>25% owner's share: <strong>$506,250</strong></li>
+          <li>Net of $31,500 after-tax cost: <strong>+$474,750</strong></li>
+          <li>Orthopedic ASC multiples: <strong>7x–10x</strong> (2025–2026)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="eyebrow" style="margin-bottom:6pt;margin-top:4pt;">Non-Profit Hospital — Migration &amp; Volume Retention Model (300 TKA Program)</div>
+  <table>
+    <thead>
+      <tr><th>Scenario</th><th>HOPD Cases</th><th>Annual Revenue (50/50 mix)</th><th>Annual Revenue Impact</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>All cases remain HOPD (navigation-equipped)</td><td class="r">300</td><td class="r pos">$6.30M</td><td class="r">Baseline</td></tr>
+      <tr><td>20% migrate to competitor ASC (60 cases)</td><td class="r">240</td><td class="r">$5.60M</td><td class="r neg">($700K)</td></tr>
+      <tr class="hl-row"><td><strong>35% migrate (1 high-volume surgeon recruited)</strong></td><td class="r"><strong>195</strong></td><td class="r"><strong>$4.97M</strong></td><td class="r neg"><strong>($1.33M)</strong></td></tr>
+    </tbody>
+  </table>
+  <div class="callout gold">
+    <strong>The surgeon recruitment math:</strong> One high-volume joint surgeon performing 200 TKAs/year, migrating to a navigation-equipped ASC = <strong>$944,200/year in facility fee revenue permanently lost</strong> (at $4,721 HOPD premium × 200 cases). A $250,000 navigation investment is recovered by retaining just 53 cases annually.
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     PAGE 4: REIMBURSEMENT
+══════════════════════════════ -->
+<div class="section section-break">
+  <div class="sec-header">
+    <div class="sec-num">3</div>
+    <div class="sec-title">2026 Reimbursement &amp; CMS Coverage Landscape</div>
+    <div class="sec-badge">Force 2 of 2</div>
+  </div>
+
+  <p>The CY 2026 OPPS/ASC Final Rule represents the most significant expansion of ASC-eligible procedures in the program's history. The rule directly creates financial incentives for ambulatory navigation capability that did not exist in prior years.</p>
+
+  <div class="eyebrow" style="margin-bottom:6pt;">HOPD vs. ASC Medicare Payment Rates (Estimated CY 2026)</div>
+  <table>
+    <thead>
+      <tr><th>Procedure</th><th>CPT</th><th>HOPD Rate (est.)</th><th>ASC Rate (est.)</th><th>HOPD Premium</th><th>Navigation Required</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl-row"><td><strong>Total Knee Arthroplasty</strong></td><td>27447</td><td class="r">~$14,005</td><td class="r">~$9,284</td><td class="r gld"><strong>~$4,721</strong></td><td><strong>Yes — strongly preferred</strong></td></tr>
+      <tr><td>Total Hip Arthroplasty</td><td>27130</td><td class="r">~$14,005</td><td class="r">~$9,478</td><td class="r gld">~$4,527</td><td>Yes — strongly preferred</td></tr>
+      <tr class="hl-row"><td><strong>Revision TKA (NEW 2026 ASC-eligible)</strong></td><td>27487</td><td class="r">~$16,000+</td><td class="r">~$9,500–12,000</td><td class="r gld">~$4,000–6,000</td><td><strong>Yes — required</strong></td></tr>
+      <tr class="hl-row"><td><strong>Revision THA (NEW 2026 ASC-eligible)</strong></td><td>27134</td><td class="r">~$16,000+</td><td class="r">~$9,500–12,000</td><td class="r gld">~$4,000–6,000</td><td><strong>Yes — required</strong></td></tr>
+      <tr><td>Total Shoulder Arthroplasty</td><td>23472</td><td class="r">~$9,000</td><td class="r">~$8,700–9,200</td><td class="r gld">—</td><td>Yes</td></tr>
+      <tr><td>ACL Reconstruction</td><td>29888</td><td class="r">~$9,000</td><td class="r">~$4,500–5,500</td><td class="r gld">~$4,000</td><td>Situational</td></tr>
+    </tbody>
+  </table>
+  <p class="small" style="margin-bottom:10pt;">Commercial payers run 150–300%+ of Medicare ASC rates for TJA in most markets. On-campus HOPD rates shown. Off-campus HOPDs acquired after November 2, 2015 subject to site-neutral payment (~40% of OPPS). Confirm campus designation before modeling revenue.</p>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="card blue">
+        <h4>What Changed in CY 2026 (CMS Final Rule)</h4>
+        <ul class="bullets">
+          <li><strong>285 MSK procedures removed from IPO list</strong></li>
+          <li>560 surgical + 35 ancillary procedures added to ASC Covered Procedures List</li>
+          <li>New <strong>Level 7 Musculoskeletal APC</strong> for complex revisions and multilevel fusions</li>
+          <li>Revision THA and TKA: first-time ASC billing eligibility</li>
+          <li>Complex multilevel spinal fusions: selected CPTs (22551, 22554, 22612, 22630, 22633)</li>
+          <li>+2.6% ASC payment rate update</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card red">
+        <h4>Critical Reimbursement Clarification</h4>
+        <ul class="bullets">
+          <li>CMS does <strong>NOT</strong> pay a facility premium for navigation-assisted TJA</li>
+          <li>Extremity navigation CPTs <strong>0054T/0055T are bundled</strong> under comprehensive APCs — not separately billable for TKA/THA</li>
+          <li><strong>Exception: Spine navigation CPTs 61781–61783 ARE separately billable</strong> under HOPD OPPS — generate incremental billing on top of the spine fusion facility fee</li>
+          <li>The financial case for joint navigation is <em>volume, quality, and competitive position</em> — not a billing premium</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <strong>Market direction:</strong> Sg2 Health Consultants projects <strong>51% of total joints will be performed outpatient by 2026</strong>. ASC joint replacement centers grew from 118 to 312 (2019–2023), with outpatient knee replacement volume up <strong>293%</strong> in four years. The site-of-service shift is not a prediction — it is already the dominant trend in orthopedic surgery delivery.
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     PAGE 5: CLINICAL EVIDENCE
+══════════════════════════════ -->
+<div class="section section-break">
+  <div class="sec-header">
+    <div class="sec-num">4</div>
+    <div class="sec-title">Clinical Evidence Summary</div>
+    <div class="sec-badge">Peer-Reviewed Data</div>
+  </div>
+
+  <p>The clinical argument for navigation is a financial argument. In bundled payment and DRG environments, revision avoidance translates directly to operating margin improvement without a corresponding second reimbursement. Peer-reviewed data consistently demonstrates a 46–83% relative reduction in key quality metrics across procedure categories.</p>
+
+  <div class="eyebrow" style="margin-bottom:6pt;">Total Knee Arthroplasty: Alignment Accuracy (Meta-Analysis)</div>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Navigation / CAS</th><th>Conventional</th><th>Relative Reduction</th><th>Clinical Significance</th></tr>
+    </thead>
+    <tbody>
+      <tr class="hl-row"><td><strong>Mechanical axis malalignment &gt;3°</strong></td><td class="r pos"><strong>9.0%</strong></td><td class="r neg"><strong>31.8%</strong></td><td class="r acc"><strong>71%</strong></td><td><strong>Primary driver of early revision</strong></td></tr>
+      <tr><td>Limb mechanical axis outliers</td><td class="r pos">4.3%</td><td class="r neg">18.6%</td><td class="r acc">77%</td><td>Component longevity</td></tr>
+      <tr><td>Femoral component outliers</td><td class="r pos">3.1%</td><td class="r neg">18.4%</td><td class="r acc">83%</td><td>Sagittal plane alignment</td></tr>
+      <tr><td>Tibial component outliers</td><td class="r pos">3.5%</td><td class="r neg">12.2%</td><td class="r acc">71%</td><td>Coronal plane alignment</td></tr>
+    </tbody>
+  </table>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="eyebrow" style="margin-bottom:6pt;">UKA Revision Rate (AOANJRR 5-Year Registry Data)</div>
+      <table>
+        <thead>
+          <tr><th></th><th>Mako Robotic-Assisted</th><th>Conventional</th></tr>
+        </thead>
+        <tbody>
+          <tr class="hl-row"><td><strong>5-Year Revision Rate</strong></td><td class="r pos"><strong>2.5%</strong></td><td class="r neg"><strong>4.6%</strong></td></tr>
+          <tr><td>3-Year Revision Rate</td><td class="r pos">2.5%</td><td class="r neg">5.5–5.8%</td></tr>
+          <tr><td>Relative Reduction</td><td class="r acc" colspan="2"><strong>46% fewer revisions</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <div class="eyebrow" style="margin-bottom:6pt;">Learning Curve: Cases to Time Neutrality</div>
+      <table>
+        <thead>
+          <tr><th>System Type</th><th>Cases to Neutrality</th><th>Add'l Time (Early)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mini robotic systems</td><td class="r acc">5–7 cases</td><td class="r">+6 min</td></tr>
+          <tr class="hl-row"><td>Mako robotic TKA</td><td class="r acc"><strong>9–15 cases</strong></td><td class="r">Variable</td></tr>
+          <tr><td>CAS (optical tracking)</td><td class="r">16–20 cases</td><td class="r">+10–20 min</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <p class="small" style="margin-bottom:10pt;">"Navigation slows us down" is valid for 1–2 months only. The literature does not support it as a durable argument against adoption. A surgeon committed to working through 15–20 cases reaches full time efficiency.</p>
+
+  <div class="eyebrow" style="margin-bottom:6pt;">Spine: Direct Cost Savings Model</div>
+  <table>
+    <thead>
+      <tr><th>Metric</th><th>Navigation</th><th>Conventional</th><th>Savings Per 100 Cases</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>Pedicle screw revision rate</td><td class="r pos">~0%</td><td class="r neg">3–4.4%</td><td class="r pos">—</td></tr>
+      <tr class="hl-row"><td><strong>Cost per pedicle screw revision</strong></td><td class="r" colspan="2">$23,762 (direct hospital cost)</td><td class="r pos"><strong>$71,286</strong></td></tr>
+    </tbody>
+  </table>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="card blue">
+        <h4>LOS &amp; Same-Day Discharge</h4>
+        <ul class="bullets">
+          <li>Mako robotic TKA vs. conventional: <strong>26% reduction in hospital length of stay</strong> (prospective study)</li>
+          <li>Lower pain scores at 24, 48, 72 hours post-op; reduced opioid requirements</li>
+          <li>Faster recovery supports same-day discharge in ASC setting</li>
+          <li>Unexpected overnight admission rate: key accreditation quality metric for ASC joint replacement programs</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card green">
+        <h4>Payer Contracting Leverage</h4>
+        <ul class="bullets">
+          <li><strong>Centers of Excellence designation</strong> — Blue Distinction, BUCA networks direct volume to COE facilities; navigation outcomes data is a qualifying criterion</li>
+          <li><strong>Bundled payment advantage</strong> — every avoided revision = $20–50K in avoided cost within the bundle</li>
+          <li><strong>Direct employer contracting</strong> — self-insured employers seek navigation-capable ASCs for TJA episodes ($5,717 mean facility fee savings vs. HOPD; AJMC/Turquoise Health)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     PAGE 6: MARKET + FIRST-TIME DEVELOPER
+══════════════════════════════ -->
+<div class="section section-break">
+  <div class="sec-header">
+    <div class="sec-num">5</div>
+    <div class="sec-title">Market Position &amp; Competitive Context</div>
+    <div class="sec-badge">Technology Adoption</div>
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <table>
+        <thead><tr><th>Market Metric</th><th>Data Point</th></tr></thead>
+        <tbody>
+          <tr class="hl-row"><td><strong>Robotic TKA market share (end 2023)</strong></td><td class="r acc"><strong>20.4%</strong></td></tr>
+          <tr><td>Mako alone</td><td class="r">10.3% of all TKA</td></tr>
+          <tr><td>Growth rate 2017–2023</td><td class="r acc">+600% (sixfold)</td></tr>
+          <tr><td>Navigation market CAGR (2025–2030)</td><td class="r acc">13.9%</td></tr>
+          <tr><td>Global navigation market (2024)</td><td class="r">$2.85 billion</td></tr>
+          <tr><td>U.S. ASC orthopedic market (2030 proj.)</td><td class="r">$15 billion</td></tr>
+          <tr><td>% TJA outpatient projected 2026</td><td class="r acc">51% (Sg2)</td></tr>
+          <tr><td>ASC joint replacement centers (2019→2023)</td><td class="r acc">118 → 312</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col">
+      <div class="card navy">
+        <h4>Competitive Position Reality</h4>
+        <p style="color:#c8d8e4;font-size:8.5pt;line-height:1.6;">At 20.4% of TKA volume using robotic assistance — with sixfold growth in six years — this is no longer early-adopter technology. Facilities without navigation are increasingly asked by surgeons and patients why they don't have it.</p>
+        <p style="color:#c8d8e4;font-size:8.5pt;line-height:1.6;margin-bottom:0;">69% of patients surveyed believe robotic-assisted surgery produces fewer complications and better outcomes (2021 patient survey). Consumer awareness has crossed the threshold where navigation-capable facilities have a measurable advantage in patient-choice markets.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="eyebrow" style="margin-bottom:6pt;">Surgeon Recruitment: The Training Cohort Effect</div>
+  <p>Orthopedic surgery graduates completing residency and fellowship from 2018 onward trained on robotic and navigation platforms as a standard part of their education. These surgeons actively seek facilities with compatible technology as a condition of employment or privileges, and in documented cases have stated: "I will never do another joint replacement without robotics technology." This creates a structural recruitment advantage for navigation-equipped facilities that is not replicable by compensation alone.</p>
+  <p style="margin-bottom:14pt;">The U.S. faces a projected shortage of <strong>5,080 orthopedic surgeons by 2025</strong> (AAOS projections). In a supply-constrained market, facilities offering navigation recruit from a larger eligible pool. Facilities without it recruit from what remains.</p>
+</div>
+
+
+<!-- ══════════════════════════════
+     PAGE 7: FIRST-TIME ASC DEVELOPER
+══════════════════════════════ -->
+<div class="section keep-together">
+  <div class="sec-header">
+    <div class="sec-num">6</div>
+    <div class="sec-title">First-Time ASC Developer Reference</div>
+    <div class="sec-badge">De Novo Fundamentals</div>
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <table>
+        <thead><tr><th>Category</th><th>Low End</th><th>High End</th></tr></thead>
+        <tbody>
+          <tr><td>Land / real estate</td><td class="r">$600K</td><td class="r">$1.5M</td></tr>
+          <tr><td>Construction / build-out</td><td class="r">$1.5M</td><td class="r">$6.0M</td></tr>
+          <tr><td>Medical equipment (2 ORs)</td><td class="r">$750K</td><td class="r">$2.0M</td></tr>
+          <tr><td>Pre-opening (legal, CON, consulting)</td><td class="r">$200K</td><td class="r">$500K</td></tr>
+          <tr class="hl-row"><td><strong>Working capital reserve ⚠</strong></td><td class="r neg"><strong>$800K</strong></td><td class="r neg"><strong>$1.5M</strong></td></tr>
+          <tr><td><strong>Total project</strong></td><td class="r acc"><strong>$4.0M</strong></td><td class="r acc"><strong>$12.0M+</strong></td></tr>
+        </tbody>
+      </table>
+      <p class="small">Working capital: budget 6–8 months operating costs as <em>liquid reserves</em>, not a credit line. Cash gap from opening to consistent collections is 4–6 months minimum.</p>
+    </div>
+    <div class="col">
+      <div class="card green">
+        <h4>Equipment at Opening: Direct Opinion</h4>
+        <ul class="bullets">
+          <li>$300K Arvis in Year 1 → $300K entity deduction</li>
+          <li>4-surgeon group at 37%: <strong>$111K total tax savings</strong> in your highest-cost year</li>
+          <li>1-year delay NPV cost: ~$8,880 across the group</li>
+          <li><strong>Finance with a loan, never a lease</strong> — leasing forfeits the depreciation</li>
+          <li>Break-even: ~67 cases/month; two-OR standard = 1,500–1,700 cases/year</li>
+        </ul>
+      </div>
+      <div class="card red">
+        <h4>Five Fatal Mistakes</h4>
+        <ul class="bullets">
+          <li>Underestimating working capital — 6–8 months, liquid</li>
+          <li>Starting payer contracting too late (begin 18 months before opening)</li>
+          <li>Phasing equipment post-opening — defers tax AND revenue</li>
+          <li>Passive physician investors</li>
+          <li>Oversizing for aspirational volume</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     PAGE 8: VAC CHECKLIST + OBJECTIONS
+══════════════════════════════ -->
+<div class="section section-break">
+  <div class="sec-header">
+    <div class="sec-num">7</div>
+    <div class="sec-title">VAC Committee Reference: Objections &amp; Responses</div>
+    <div class="sec-badge">Decision Support</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th style="width:28%;">Common Objection</th><th>Evidence-Based Response</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>"Not in this year's capital budget"</strong></td>
+        <td>Most $100–500K revenue-generating purchases fall within CFO or VP-level authorization — no board cycle required. Frame as revenue retention: at $5,000 blended differential per case, a $250K system is covered by retaining 50 cases. Request mid-year approval with a one-page retention analysis using your facility's actual TKA volume.</td>
+      </tr>
+      <tr>
+        <td><strong>"We need better ROI data before committing"</strong></td>
+        <td>One variable dominates the ROI: committed cases per month from your surgeon group. 4 additional TJAs/month = $480K/year in revenue. At $126K after-tax cost, payback is under 4 months. Request a 30-minute utilization modeling session with your specific case volume and payer mix data.</td>
+      </tr>
+      <tr>
+        <td><strong>"Navigation slows down OR throughput"</strong></td>
+        <td>The learning curve is real but short: 9–20 cases to time neutrality depending on the system. After the learning curve, OR times are equivalent to or faster than conventional. "It slows us down" is valid for the first 1–2 months only and is not a durable argument against adoption.</td>
+      </tr>
+      <tr>
+        <td><strong>"We're evaluating a competitor system"</strong></td>
+        <td>A comparison worth doing thoroughly. Evaluate total cost of ownership (service contract terms, upgrade cycle obligations), specific procedure categories each system enables vs. your case mix, and OR setup time at steady state. Surgeon-to-surgeon reference calls with current users of each system provide the most actionable comparison.</td>
+      </tr>
+      <tr>
+        <td><strong>"There's no reimbursement premium for navigation"</strong></td>
+        <td>Correct — and any vendor claiming otherwise is overstating the case. CMS bundles extremity navigation CPTs (0054T/0055T) under comprehensive APCs. The financial case is: (1) navigation enables access to the highest-facility-fee procedure categories; (2) quality outcomes data drives payer contracting leverage; (3) competitive position at 20.4% robotic TKA market share. Spine navigation (61781–61783) IS separately billable.</td>
+      </tr>
+      <tr>
+        <td><strong>"Let's wait and see how the reimbursement landscape develops"</strong></td>
+        <td>The 2026 CMS rule has already restructured the landscape. 285 procedures came off the IPO list. 560 new ASC-eligible procedures are effective now. Waiting does not change these structural shifts — it only delays the facility's ability to perform and bill for the new procedure categories that require navigation.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="eyebrow" style="margin-bottom:6pt;margin-top:10pt;">VAC Submission Checklist</div>
+  <div class="two-col">
+    <div class="col">
+      <div class="card blue">
+        <h4>Clinical Justification (Complete Before Submission)</h4>
+        <ul class="bullets">
+          <li>Surgeon commitment letters / case volume attestations</li>
+          <li>Current malalignment rate data (if available) vs. 9.0% navigation benchmark</li>
+          <li>Revision rate data for TKA/UKA programs</li>
+          <li>LOS data for current joint replacement program</li>
+          <li>Peer-reviewed citations supporting navigation in your target procedure categories</li>
+        </ul>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card gold">
+        <h4>Financial Documentation (Complete Before Submission)</h4>
+        <ul class="bullets">
+          <li>Custom utilization model with facility case volume + payer mix</li>
+          <li>GPO contract query (Vizient/Premier) — 10–27% off list documented</li>
+          <li>Financing method confirmation (loan vs. lease for depreciation eligibility)</li>
+          <li>CPA/tax advisor review of bonus depreciation applicability</li>
+          <li>Total cost of ownership: equipment + service contract + upgrade obligations</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     PAGE 9: DISCLAIMER
+══════════════════════════════ -->
+<div class="section section-break">
+  <div class="sec-header">
+    <div class="sec-num">8</div>
+    <div class="sec-title">Financial &amp; Regulatory Disclaimer</div>
+  </div>
+
+  <div class="callout red" style="margin-bottom:14pt;">
+    <strong>Important Notice:</strong> This document is prepared as a consultative resource for informational and educational purposes only. It does not constitute — and should not be relied upon as — financial, tax, legal, accounting, regulatory, or investment advice of any kind.
+  </div>
+
+  <div class="two-col">
+    <div class="col">
+      <div class="card">
+        <h4>Not Financial or Tax Advice</h4>
+        <p>All financial analyses, tax scenarios, depreciation calculations, and ROI projections are illustrative estimates based on publicly available data, published tax rates, and industry benchmarking. Tax laws, including provisions of the One Big Beautiful Bill Act (PL 119-21, July 2025) and all IRS guidance, are subject to change. Individual outcomes depend on entity structure, ownership percentages, income levels, passive activity rules, state conformity, and specific transaction terms.</p>
+        <p class="mb-0"><strong>All recipients must consult their own qualified CPA, tax attorney, or financial advisor before making any capital investment or financing decision.</strong></p>
+      </div>
+      <div class="card">
+        <h4>Reimbursement Variability</h4>
+        <p class="mb-0">Reimbursement figures are based on CMS published payment rules, MedPAC reports, and industry benchmarking as of Q2 2026. Actual reimbursement varies by local coverage determinations, hospital wage indices, DSH adjustments, individual payer contracts, procedure coding, and annual CMS rule updates. Nothing herein guarantees any specific reimbursement outcome for any facility or procedure.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card">
+        <h4>Regulatory Compliance</h4>
+        <p class="mb-0">This document does not address compliance with the Stark Law (42 U.S.C. §1395nn), Anti-Kickback Statute (42 U.S.C. §1320a-7b), False Claims Act, or state healthcare regulatory requirements. Physician ownership of ASCs and related financial relationships are subject to complex regulatory requirements. Engage qualified healthcare legal counsel before any ownership, investment, or equipment financing arrangement.</p>
+      </div>
+      <div class="card">
+        <h4>State Law Variance</h4>
+        <p class="mb-0">California, New York, New Jersey, and other states do not conform to federal bonus depreciation provisions. State-level tax outcomes may differ materially from federal outcomes described herein. Consult a state-qualified CPA for state-specific analysis before making any decisions based on depreciation projections.</p>
+      </div>
+      <div class="card">
+        <h4>Limitation of Liability</h4>
+        <p class="mb-0">[Company Name] makes no representations or warranties, express or implied, regarding the accuracy, completeness, or current applicability of any information contained herein and shall not be liable for any financial loss, tax liability, regulatory penalty, or other damages arising from reliance on this material.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="quote">
+    "The information in this document is designed to help your committee have a more informed conversation with your own financial and legal advisors. It reflects publicly available data about tax law, CMS reimbursement, and ASC industry benchmarks. It is not a substitute for advice from your CPA or healthcare attorney — and we strongly recommend that all capital investment decisions be reviewed by qualified professionals before final committee action."
+  </div>
+
+  <div style="margin-top:16pt;padding-top:12pt;border-top:1pt solid #dde3ea;display:flex;justify-content:space-between;align-items:center;">
+    <div style="font-size:7.5pt;color:#aabbc8;">
+      Package prepared Q2 2026 · Tax and reimbursement data current as of date of preparation<br>
+      Verify all figures with primary sources and qualified advisors prior to use in any financial decision
+    </div>
+    <div style="font-size:9pt;font-weight:800;color:#0d1b2a;letter-spacing:1pt;">
+      ASTRA · ARVIS
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
