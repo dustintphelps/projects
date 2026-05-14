@@ -300,7 +300,68 @@ ul.rg-bullets li strong { color:var(--rg-text); }
   .rg-container { padding:24px 16px 60px; }
   .two-col { grid-template-columns:1fr; }
   .objection-row { grid-template-columns:1fr; }
+  .rslide { padding:32px 24px 80px; }
+  .rslide .rs-two { grid-template-columns:1fr; }
+  .rs-q-cards { grid-template-columns:1fr; }
 }
+
+/* ══ REP FIELD GUIDE PANEL ══ */
+#rep-panel { background:var(--navy); overflow:hidden; }
+#rep-deck { width:100%; height:100%; position:relative; }
+.rslide {
+  position:absolute; inset:0;
+  display:none; flex-direction:column;
+  padding:40px 60px 72px;
+  opacity:0; transition:opacity 0.2s ease;
+}
+.rslide.active { display:flex; opacity:1; }
+.rslide.rs-title {
+  background:linear-gradient(135deg,#0d1b2a 0%,#112740 55%,#0d1b2a 100%);
+  justify-content:center;
+}
+.rslide.rs-dark { background:var(--slate); }
+.rs-chrome { position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,var(--gold),var(--accent)); }
+.rs-badge { position:absolute;top:16px;right:24px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;background:rgba(244,169,31,0.12);padding:4px 10px;border-radius:20px;border:1px solid rgba(244,169,31,0.3); }
+.rs-eyebrow { font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px; }
+.rs-h1 { font-size:clamp(26px,3.4vw,46px);font-weight:800;line-height:1.1;color:var(--white);margin-bottom:16px; }
+.rs-h2 { font-size:clamp(18px,2.2vw,28px);font-weight:700;color:var(--white);margin-bottom:18px;border-bottom:2px solid rgba(255,255,255,0.1);padding-bottom:10px; }
+.rs-subtitle { font-size:clamp(13px,1.3vw,16px);color:var(--muted);line-height:1.6;max-width:600px; }
+.rs-two { display:grid;grid-template-columns:1fr 1fr;gap:24px;flex:1; }
+.rs-card { background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:20px; }
+.rs-card.gold-border { border-color:rgba(244,169,31,0.4);background:rgba(244,169,31,0.05); }
+.rs-card.blue-border { border-color:rgba(0,180,216,0.4);background:rgba(0,180,216,0.05); }
+.rs-card.green-border { border-color:rgba(46,204,113,0.35);background:rgba(46,204,113,0.05); }
+.rs-card h3 { font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:12px; }
+.rs-card h3.blue { color:var(--accent); }
+.rs-card h3.green { color:var(--green); }
+.rs-stat-big { font-size:clamp(28px,3.5vw,48px);font-weight:800;color:var(--accent);line-height:1; }
+.rs-stat-label { font-size:11px;color:var(--muted);margin-top:4px;text-transform:uppercase;letter-spacing:1px; }
+.rs-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:8px; }
+.rs-list li { font-size:13px;color:#cbd5e1;line-height:1.4;display:flex;gap:8px; }
+.rs-list li::before { content:'✓';color:var(--green);font-weight:700;flex-shrink:0; }
+.rs-list li.who::before { content:'›';color:var(--accent);font-size:16px;line-height:1; }
+.rs-starter { background:rgba(0,180,216,0.08);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:12px 16px;margin-top:16px;font-size:12px;color:#e2e8f0;font-style:italic;line-height:1.5; }
+.rs-starter strong { color:var(--accent);font-style:normal;display:block;font-size:10px;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px; }
+.rs-q-cards { display:grid;grid-template-columns:repeat(3,1fr);gap:16px;flex:1; }
+.rs-q-card { background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:10px; }
+.rs-q-num { font-size:32px;font-weight:900;color:rgba(244,169,31,0.25);line-height:1; }
+.rs-q-text { font-size:13px;color:var(--white);font-weight:600;line-height:1.4;font-style:italic; }
+.rs-q-means { font-size:11px;color:var(--muted);line-height:1.5; }
+.rs-q-arrow { font-size:11px;color:var(--green);font-weight:700;margin-top:auto;padding-top:8px;border-top:1px solid rgba(255,255,255,0.08); }
+.rs-flag-list { list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px; }
+.rs-flag-list li { font-size:13px;color:#cbd5e1;line-height:1.4;display:flex;gap:10px;align-items:flex-start; }
+.rs-flag-list li .bullet { background:var(--gold);color:var(--navy);font-size:9px;font-weight:800;border-radius:50%;width:18px;height:18px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px; }
+.rs-tagline { font-size:clamp(16px,2vw,24px);font-weight:800;color:var(--white);margin-top:auto;padding-top:16px;border-top:2px solid rgba(244,169,31,0.3); }
+.rs-tagline span { color:var(--gold); }
+/* Rep nav controls */
+.rep-controls { position:absolute;bottom:18px;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:20px;z-index:20; }
+.rep-nav-btn { background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:var(--white);font-size:14px;font-weight:700;cursor:pointer;border-radius:8px;padding:7px 18px;transition:background 0.2s;letter-spacing:0.5px; }
+.rep-nav-btn:hover { background:rgba(255,255,255,0.14); }
+.rep-nav-btn:disabled { opacity:0.25;cursor:default; }
+.rep-dots { display:flex;gap:6px;align-items:center; }
+.rep-dot { width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,0.2);transition:background 0.2s,width 0.2s;cursor:pointer; }
+.rep-dot.active { background:var(--gold);width:20px;border-radius:3px; }
+.rep-slide-counter { font-size:11px;color:var(--muted);min-width:36px;text-align:center; }
 </style>
 </head>
 <body>
@@ -312,6 +373,7 @@ ul.rg-bullets li strong { color:var(--rg-text); }
     <div class="brand">ASTRA <span>·</span> ARVIS</div>
     <button class="tab-btn active" onclick="switchTab('presentation', this)">&#9654; Presentation</button>
     <button class="tab-btn" onclick="switchTab('guide', this)">&#9776; Resource Guide</button>
+    <button class="tab-btn" onclick="switchTab('rep', this)">&#9889; Rep Field Guide</button>
     <div class="spacer"></div>
     <div class="badge">2026 Capital Investment Package &nbsp;·&nbsp; Internal Use Only</div>
   </nav>
@@ -1240,6 +1302,189 @@ ul.rg-bullets li strong { color:var(--rg-text); }
       </div><!-- /rg-container -->
     </div><!-- /guide-panel -->
 
+    <!-- ══════════════════════════════════
+         REP FIELD GUIDE PANEL
+    ══════════════════════════════════ -->
+    <div class="panel" id="rep-panel">
+      <div id="rep-deck">
+
+        <!-- SLIDE 1: The Opportunity -->
+        <div class="rslide rs-title active">
+          <div class="rs-chrome"></div>
+          <div class="rs-badge">Rep Field Guide · 10 Min</div>
+          <div class="rs-eyebrow">Your 10-Minute Field Guide</div>
+          <div class="rs-h1">Two Buyers.<br>One Conversation.<br>Big Numbers.</div>
+          <div class="rs-subtitle">The One Big Beautiful Bill Act (July 2025) made Astra Arvis dramatically cheaper for taxable buyers — permanently. You don't need to know every detail. You need to know the signals, ask 3 questions, and flag it.</div>
+          <div class="rs-two" style="margin-top:28px;flex:0 0 auto;">
+            <div class="rs-card gold-border">
+              <h3>For-Profit Hospital</h3>
+              <div class="rs-stat-big">~35–45%</div>
+              <div class="rs-stat-label">less than sticker after tax</div>
+              <div style="margin-top:12px;font-size:12px;color:var(--muted);line-height:1.5;">$1.2M system → <strong style="color:var(--white);">~$420K–$480K</strong> true after-tax cost for a 35% taxpayer via Section 179 + bonus depreciation</div>
+            </div>
+            <div class="rs-card blue-border">
+              <h3 class="blue">Surgeon-Owned ASC</h3>
+              <div class="rs-stat-big">285+</div>
+              <div class="rs-stat-label">new MSK procedures in ASC setting</div>
+              <div style="margin-top:12px;font-size:12px;color:var(--muted);line-height:1.5;">2026 CMS rule added <strong style="color:var(--white);">285 MSK-eligible procedures</strong> to the ASC list — new revenue that makes equipment payback faster</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 2: Hospital Opportunity -->
+        <div class="rslide rs-dark">
+          <div class="rs-chrome"></div>
+          <div class="rs-badge">Opportunity Type 1</div>
+          <div class="rs-eyebrow">For-Profit Hospital</div>
+          <div class="rs-h2">What to Look For — and What to Say</div>
+          <div class="rs-two">
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Who to find</div>
+              <ul class="rs-list">
+                <li class="who">CFO or VP of Finance</li>
+                <li class="who">VP Surgery or OR Director</li>
+                <li class="who">Orthopedic Service Line Director</li>
+                <li class="who">Supply Chain / VAC Chair</li>
+              </ul>
+              <div style="margin-top:20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Signals in the account</div>
+              <ul class="rs-list">
+                <li>Taxable (for-profit) entity</li>
+                <li>Active ortho or spine program</li>
+                <li>Capital planning cycle open or upcoming</li>
+                <li>CFO/Finance engaged in service line ROI</li>
+              </ul>
+            </div>
+            <div>
+              <div class="rs-card gold-border" style="margin-bottom:16px;">
+                <h3>The Hook</h3>
+                <div style="font-size:13px;color:var(--white);line-height:1.5;">After-tax cost is <strong>35–45% below sticker</strong>. That changes the CFO conversation — it's not a $1.2M decision, it's closer to a $420K–$480K one.</div>
+              </div>
+              <div class="rs-starter">
+                <strong>Conversation Starter</strong>
+                "Have you modeled what a system like this actually costs after the new tax provisions? The after-tax number is significantly different from what most people expect."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 3: ASC Opportunity -->
+        <div class="rslide rs-dark">
+          <div class="rs-chrome"></div>
+          <div class="rs-badge">Opportunity Type 2</div>
+          <div class="rs-eyebrow">Surgeon-Owned ASC</div>
+          <div class="rs-h2">What to Look For — and What to Say</div>
+          <div class="rs-two">
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Who to find</div>
+              <ul class="rs-list">
+                <li class="who">Managing Surgeon / Lead Partner</li>
+                <li class="who">ASC Administrator</li>
+                <li class="who">Anesthesia Partner</li>
+                <li class="who">Business Office Manager</li>
+              </ul>
+              <div style="margin-top:20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:10px;">Signals in the account</div>
+              <ul class="rs-list">
+                <li>Physician-owned (not hospital-system-owned)</li>
+                <li>Currently doing ortho or spine cases</li>
+                <li>Considering adding or expanding case types</li>
+                <li>Growing center or recent expansion</li>
+              </ul>
+            </div>
+            <div>
+              <div class="rs-card blue-border" style="margin-bottom:16px;">
+                <h3 class="blue">The Hook</h3>
+                <div style="font-size:13px;color:var(--white);line-height:1.5;">285 new MSK procedures are now reimbursed in the ASC setting for 2026. More eligible cases = faster payback. The economics already work — better navigation accelerates them.</div>
+              </div>
+              <div class="rs-starter">
+                <strong>Conversation Starter</strong>
+                "Have you seen the 2026 CMS changes to MSK procedures approved for the ASC setting? The new list opens up cases that used to require a hospital — that changes the revenue math."
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDE 4: 3 Qualifying Questions -->
+        <div class="rslide rs-dark">
+          <div class="rs-chrome"></div>
+          <div class="rs-badge">In the Field</div>
+          <div class="rs-eyebrow">Your Qualifying Questions</div>
+          <div class="rs-h2">Ask These 3. One Yes = Flag It.</div>
+          <div class="rs-q-cards">
+            <div class="rs-q-card">
+              <div class="rs-q-num">01</div>
+              <div class="rs-q-text">"Is this facility for-profit or not-for-profit?"</div>
+              <div class="rs-q-means">For-profit = the full tax story applies. Bonus depreciation, Section 179, after-tax cost — all of it lands. Non-profit = different conversation (volume + reimbursement focus).</div>
+              <div class="rs-q-arrow">✓ For-profit answer → flag it</div>
+            </div>
+            <div class="rs-q-card">
+              <div class="rs-q-num">02</div>
+              <div class="rs-q-text">"When is your next capital planning cycle or CapEx review?"</div>
+              <div class="rs-q-means">An active or upcoming cycle means there's a window. Capital decisions have timing — if they're in cycle now, urgency is real. If they're 6 months out, you have time to build the case.</div>
+              <div class="rs-q-arrow">✓ Active cycle → flag it</div>
+            </div>
+            <div class="rs-q-card">
+              <div class="rs-q-num">03</div>
+              <div class="rs-q-text">"Have you seen the 2026 CMS changes to MSK procedures in the ASC setting?"</div>
+              <div class="rs-q-means">Most administrators haven't fully absorbed the new list. If they haven't — that's your opening. If they have — they're already thinking about case expansion, which means equipment ROI is top of mind.</div>
+              <div class="rs-q-arrow">✓ Awareness gap → flag it</div>
+            </div>
+          </div>
+          <div style="margin-top:16px;font-size:12px;color:var(--muted);font-style:italic;">You're not the CFO's tax advisor. Your job is to find the signal and get the right people in the room.</div>
+        </div>
+
+        <!-- SLIDE 5: Flag It -->
+        <div class="rslide rs-dark">
+          <div class="rs-chrome"></div>
+          <div class="rs-badge">Your Move</div>
+          <div class="rs-eyebrow">The Escalation Play</div>
+          <div class="rs-h2">Flag It. Set the Call. Step Back.</div>
+          <div class="rs-two">
+            <div>
+              <div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">What to send your manager (60 seconds)</div>
+              <ul class="rs-flag-list">
+                <li><span class="bullet">1</span><span><strong style="color:var(--white);">Facility name + type</strong> — hospital or ASC, for-profit or not</span></li>
+                <li><span class="bullet">2</span><span><strong style="color:var(--white);">Decision-maker name and title</strong> — who you talked to</span></li>
+                <li><span class="bullet">3</span><span><strong style="color:var(--white);">Approximate ortho volume</strong> — cases per month if known</span></li>
+                <li><span class="bullet">4</span><span><strong style="color:var(--white);">"In capital cycle now? Y / N"</strong> — one word is fine</span></li>
+              </ul>
+              <div style="margin-top:20px;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:12px;">Trigger — any ONE of these</div>
+              <ul class="rs-list" style="font-size:12px;">
+                <li>For-profit facility confirmed</li>
+                <li>Active capital planning cycle</li>
+                <li>Interest in new CMS MSK procedure list</li>
+              </ul>
+            </div>
+            <div>
+              <div class="rs-card green-border" style="margin-bottom:16px;">
+                <h3 class="green">What Happens Next</h3>
+                <ul class="rs-list">
+                  <li>Manager co-schedules joint C-suite discovery call within 48 hrs</li>
+                  <li>You make the intro and set context (5 minutes)</li>
+                  <li>Leadership takes over the financial conversation</li>
+                  <li>You stay in the room — you're the trusted contact</li>
+                </ul>
+              </div>
+              <div class="rs-card gold-border">
+                <h3>Your Role in That Call</h3>
+                <div style="font-size:13px;color:#e2e8f0;line-height:1.5;">"I've been working with [name] at [facility] and wanted to bring in our team because the financial picture here is worth a deeper look."<br><br>Then step back. The numbers do the work.</div>
+              </div>
+            </div>
+          </div>
+          <div class="rs-tagline">You found it. <span>Leadership closes it.</span></div>
+        </div>
+
+      </div><!-- /rep-deck -->
+
+      <!-- Rep navigation controls -->
+      <div class="rep-controls">
+        <button class="rep-nav-btn" id="rep-prev" onclick="showRepSlide(repCurrent-1)">← Prev</button>
+        <div class="rep-dots" id="rep-dots"></div>
+        <span class="rep-slide-counter" id="rep-counter">1 / 5</span>
+        <button class="rep-nav-btn" id="rep-next" onclick="showRepSlide(repCurrent+1)">Next →</button>
+      </div>
+
+    </div><!-- /rep-panel -->
+
   </div><!-- /panels -->
 </div><!-- /app -->
 
@@ -1249,7 +1494,8 @@ function switchTab(tab, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
   btn.classList.add('active');
-  document.getElementById(tab === 'presentation' ? 'pres-panel' : 'guide-panel').classList.add('active');
+  const panelId = tab === 'presentation' ? 'pres-panel' : tab === 'guide' ? 'guide-panel' : 'rep-panel';
+  document.getElementById(panelId).classList.add('active');
 }
 
 /* ── PRESENTATION DECK ── */
@@ -1306,6 +1552,47 @@ document.getElementById('deck').addEventListener('click', e => {
 });
 
 showSlide(0);
+
+/* ── REP FIELD GUIDE DECK ── */
+const repSlides = Array.from(document.querySelectorAll('#rep-deck .rslide'));
+const repDotsEl = document.getElementById('rep-dots');
+const repCounter = document.getElementById('rep-counter');
+const repPrev = document.getElementById('rep-prev');
+const repNext = document.getElementById('rep-next');
+let repCurrent = 0;
+
+// Build dots
+repSlides.forEach((_, i) => {
+  const d = document.createElement('div');
+  d.className = 'rep-dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => showRepSlide(i);
+  repDotsEl.appendChild(d);
+});
+
+function showRepSlide(idx) {
+  repSlides[repCurrent].classList.remove('active');
+  repCurrent = Math.max(0, Math.min(idx, repSlides.length - 1));
+  repSlides[repCurrent].classList.add('active');
+  repDotsEl.querySelectorAll('.rep-dot').forEach((d, i) => d.classList.toggle('active', i === repCurrent));
+  repCounter.textContent = (repCurrent + 1) + ' / ' + repSlides.length;
+  repPrev.disabled = repCurrent === 0;
+  repNext.disabled = repCurrent === repSlides.length - 1;
+}
+
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('rep-panel').classList.contains('active')) return;
+  if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); showRepSlide(repCurrent + 1); }
+  if (e.key === 'ArrowLeft') { e.preventDefault(); showRepSlide(repCurrent - 1); }
+});
+
+let repTouchX = 0;
+document.getElementById('rep-panel').addEventListener('touchstart', e => { repTouchX = e.changedTouches[0].clientX; }, { passive: true });
+document.getElementById('rep-panel').addEventListener('touchend', e => {
+  const dx = e.changedTouches[0].clientX - repTouchX;
+  if (Math.abs(dx) > 50) showRepSlide(dx < 0 ? repCurrent + 1 : repCurrent - 1);
+});
+
+showRepSlide(0);
 </script>
 </body>
 </html>
